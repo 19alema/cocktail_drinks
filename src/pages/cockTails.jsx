@@ -18,10 +18,25 @@ function CockTails() {
       console.log(error)
     }
   }
+
+ 
   
   useEffect(() => {
     fetchDrinks()
   }, [search])
+
+  if (!cocktail) {
+    return (
+      <div className="container h-screen flex-col text-center flex justify-center items-center">
+        <i class="material-icons text-[8em] py-4">sentiment_dissatisfied</i>
+        
+        <div className="pb-4">
+          <h1 className="pb-2 text-2xl font-bold">Oops!!, Sorry</h1>
+          <p className="font-semibold">No Cocktail of your choice Found!!</p>
+        </div>
+      </div>
+    )
+  }
 
     return (
       <div>
